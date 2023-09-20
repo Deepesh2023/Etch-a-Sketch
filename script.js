@@ -9,6 +9,7 @@ function createGrid(gridSize) {
     }
   }
 }
+const gridSize
 const container = document.querySelector(".container");
 const rowBox = document.createElement("div");
 rowBox.classList.add("rowBox");
