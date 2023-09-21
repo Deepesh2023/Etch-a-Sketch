@@ -9,11 +9,18 @@ function createGrid(gridSize) {
     }
   }
 }
-const gridSize
+
 const container = document.querySelector(".container");
 const rowBox = document.createElement("div");
 rowBox.classList.add("rowBox");
 const columnBox = document.createElement("div");
 columnBox.classList.add("columnBox");
 
-createGrid(+gridSize);
+createGrid(16);
+
+const pixels = document.querySelectorAll(".columnBox");
+pixels.forEach((pixel) => {
+  pixel.addEventListener("click", () => {
+    pixel.classList.add("colour");
+  });
+});
