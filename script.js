@@ -1,26 +1,29 @@
-// creating the grid
-function createGrid(gridSize) {
-  for (i = 0; i < gridSize; i++) {
-    var cloned_rowBox = rowBox.cloneNode(true);
-    container.appendChild(cloned_rowBox);
-    for (j = 0; j < gridSize; j++) {
-      var cloned_columnBox = columnBox.cloneNode(true);
-      cloned_rowBox.appendChild(cloned_columnBox);
+$(document).ready(function () {
+  // creating the grid
+  function createGrid(gridSize) {
+    for (i = 0; i < gridSize; i++) {
+      let cloned_rowBox = rowBox.clone();
+      cloned_rowBox.appendTo(container);
+      for (j = 0; j < gridSize; j++) {
+        let cloned_columnBox = columnBox.clone();
+        cloned_columnBox.appendTo(cloned_rowBox);
+      }
     }
   }
-}
 
-const container = document.querySelector(".container");
-const rowBox = document.createElement("div");
-rowBox.classList.add("rowBox");
-const columnBox = document.createElement("div");
-columnBox.classList.add("columnBox");
+  const container = $(".container");
+  const rowBox = $("<div></div>");
+  const columnBox = $("<div></div>");
+  rowBox.addClass("rowBox");
+  columnBox.addClass("columnBox");
 
-createGrid(16);
-
-const pixels = document.querySelectorAll(".columnBox");
-pixels.forEach((pixel) => {
-  pixel.addEventListener("click", () => {
-    pixel.classList.add("colour");
-  });
+  createGrid(10);
 });
+
+// const container = $(".container");
+// const rowBox = document.createElement("div");
+// rowBox.classList.add("rowBox");
+// const columnBox = document.createElement("div");
+// columnBox.classList.add("columnBox");
+
+// createGrid(16);
