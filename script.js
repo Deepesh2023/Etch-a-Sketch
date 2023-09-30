@@ -11,6 +11,20 @@ $(document).ready(function () {
     }
   }
 
+  function draw() {
+    $(".columnBox").each(function (index, element) {
+      $(element).on("mousemove", () => {
+        $(element).addClass("colour");
+      });
+    });
+  }
+
+  function unDraw() {
+    $(".columnBox").each(function (index, element) {
+      $(element).off("mousemove");
+    });
+  }
+
   const container = $(".container");
   const rowBox = $("<div></div>");
   const columnBox = $("<div></div>");
@@ -18,12 +32,7 @@ $(document).ready(function () {
   columnBox.addClass("columnBox");
 
   createGrid(10);
+
+  $(container).on("mousedown", draw);
+  $(container).on("mouseup", unDraw);
 });
-
-// const container = $(".container");
-// const rowBox = document.createElement("div");
-// rowBox.classList.add("rowBox");
-// const columnBox = document.createElement("div");
-// columnBox.classList.add("columnBox");
-
-// createGrid(16);
