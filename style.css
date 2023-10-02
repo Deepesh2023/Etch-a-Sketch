@@ -9,7 +9,21 @@
 }
 
 .top {
-  height: 120px;
+  height: 112px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1;
+}
+
+.heading,
+.gridOptions {
+  height: 100%;
+  padding-left: 72px;
+}
+
+.heading {
+  color: wheat;
 }
 
 .middle {
@@ -19,6 +33,33 @@
 
 .sideBar {
   width: 56px;
+  padding: 8px;
+}
+
+.button {
+  background-color: #524b49;
+  border-radius: 16px;
+  height: 64px;
+  margin: 8px;
+}
+
+.pencil,
+.eraser {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pencil img,
+.eraser img {
+  height: 100%;
+  width: auto;
+}
+
+.pencil:hover,
+.eraser:hover {
+  filter: brightness(150%);
 }
 
 .container {
@@ -34,5 +75,5 @@
 }
 
 .bottom {
-  height: 40px;
+  height: 32px;
 }
