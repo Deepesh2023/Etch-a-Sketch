@@ -26,6 +26,50 @@
   color: wheat;
 }
 
+.gridOptions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+#gridSize,
+.toggleSwitch,
+.reset {
+  height: 32px;
+  width: 64px;
+}
+
+#gridSize {
+  border-radius: 16px;
+  background-color: #524b49;
+}
+
+.toggleSwitch {
+  padding: 2px;
+  background-color: #524b49;
+  filter: brightness(150%);
+  border-radius: 16px;
+}
+
+.toggledOn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reset {
+  background-color: red;
+  border-radius: 16px;
+}
+
+.switchPosition {
+  background-color: #524b49;
+  filter: brightness(65%);
+  height: 100%;
+  width: 50%;
+  border-radius: 16px;
+}
+
 .middle {
   height: 600px;
   display: flex;
