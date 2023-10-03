@@ -116,6 +116,23 @@
 .canvas {
   width: 600px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.rowBox {
+  flex-basis: 1;
+  height: 100%;
+  display: flex;
+}
+
+.columnBox {
+  flex-basis: 1;
+  width: 100%;
+}
+
+.colour {
+  background-color: black;
 }
 
 .bottom {
