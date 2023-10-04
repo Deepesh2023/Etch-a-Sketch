@@ -11,6 +11,15 @@ $(document).ready(function () {
     }
   }
 
+  function preventDefaultBehaviour() {
+    document.body.ondragstart = function () {
+      return false;
+    };
+    document.body.ondrop = function () {
+      return false;
+    };
+  }
+
   function pencil() {
     $(canvas).on("mousedown", draw);
     $(canvas).on("mouseup", dontDraw);
@@ -19,7 +28,7 @@ $(document).ready(function () {
   function eraser() {
     $(canvas).on("mousedown", erase);
     $(canvas).on("mouseup", dontErase);
-    $(".pencil").on("click", pencil);
+    // $(".pencil").on("click", pencil);
   }
 
   function draw() {
@@ -58,9 +67,12 @@ $(document).ready(function () {
   const columnBox = $("<div></div>");
   rowBox.addClass("rowBox");
   columnBox.addClass("columnBox");
-  createGrid(10);
+  createGrid(20);
 
-  // detecting user selections
-  $(".pencil").on("click", pencil);
-  $(".eraser").on("click", eraser);
+  // preventing the default browser behaviour
+  preventDefaultBehaviour();
+
+  // detecting user interactions
+  $(".pencil").on("mousedown", pencil);
+  $(".eraser").on("mousedown", eraser);
 });
