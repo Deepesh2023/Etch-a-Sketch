@@ -1,5 +1,7 @@
 * {
   margin: 0;
+  font-family: "Patrick Hand", cursive;
+  color: white;
 }
 
 .top,
@@ -23,7 +25,7 @@
 }
 
 .heading {
-  color: wheat;
+  font-size: 1.25em;
 }
 
 .gridOptions {
@@ -36,6 +38,7 @@
 #gridSize,
 .toggleSwitch,
 .reset {
+  font-size: 1.25em;
   height: 32px;
   width: 64px;
 }
