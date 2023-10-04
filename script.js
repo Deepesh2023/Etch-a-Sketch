@@ -11,6 +11,30 @@ $(document).ready(function () {
     }
   }
 
+  // show grid
+  function showGrid() {
+    $(".toggleSwitch").on("click", () => {
+      $(".columnBox").css({
+        outline: "1px solid black",
+      });
+      $(".toggleSwitch").addClass("toggledOn");
+      $(".toggleSwitch").addClass("toggledOnColour");
+      noGrid();
+    });
+  }
+
+  // no grid
+  function noGrid() {
+    $(".toggleSwitch").on("click", () => {
+      $(".columnBox").css({
+        outline: "0px solid black",
+      });
+      $(".toggleSwitch").removeClass("toggledOn");
+      $(".toggleSwitch").removeClass("toggledOnColour");
+      showGrid();
+    });
+  }
+
   function preventDefaultBehaviour() {
     document.body.ondragstart = function () {
       return false;
@@ -68,11 +92,25 @@ $(document).ready(function () {
   rowBox.addClass("rowBox");
   columnBox.addClass("columnBox");
   createGrid(20);
+  showGrid();
 
   // preventing the default browser behaviour
   preventDefaultBehaviour();
 
   // detecting user interactions
-  $(".pencil").on("mousedown", pencil);
-  $(".eraser").on("mousedown", eraser);
+  $(".pencil").on("mousedown", () => {
+    $(".eraser").removeClass("eraserOn");
+    $(".pencil").addClass("pencilOn");
+    pencil();
+  });
+
+  $(".eraser").on("mousedown", () => {
+    $(".pencil").removeClass("pencilOn");
+    $(".eraser").addClass("eraserOn");
+    eraser();
+  });
+
+  $(".reset").on("click", () => {
+    window.location.reload();
+  });
 });

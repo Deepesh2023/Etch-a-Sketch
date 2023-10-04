@@ -52,21 +52,26 @@
   border-radius: 16px;
 }
 
+.switchPosition {
+  background-color: #f9d0b48a;
+  filter: brightness(65%);
+  height: 100%;
+  width: 50%;
+  border-radius: 16px;
+}
+
 .toggledOn {
   display: flex;
   justify-content: flex-end;
 }
 
-.reset {
-  background-color: red;
-  border-radius: 16px;
+.toggledOnColour {
+  background-color: #b56631;
 }
 
-.switchPosition {
-  background-color: #524b49;
-  filter: brightness(65%);
-  height: 100%;
-  width: 50%;
+.reset {
+  background-color: #b5304a;
+  border: initial;
   border-radius: 16px;
 }
 
@@ -102,8 +107,17 @@
 }
 
 .pencil:hover,
-.eraser:hover {
+.eraser:hover,
+.reset:hover {
   filter: brightness(150%);
+}
+
+.pencilOn {
+  background-color: #70baa0;
+}
+
+.eraserOn {
+  background-color: #524ab4;
 }
 
 .container {
