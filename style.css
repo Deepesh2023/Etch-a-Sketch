@@ -49,6 +49,7 @@
   border: none;
   -webkit-appearance: textfield;
   appearance: textfield;
+  text-align: center;
 }
 
 .toggleSwitch {
@@ -79,6 +80,11 @@
   background-color: #b5304a;
   border: initial;
   border-radius: 16px;
+}
+
+.gridOptions p {
+  color: #cd8d33;
+  font-size: 1.5em;
 }
 
 .middle {

@@ -2,6 +2,7 @@ $(document).ready(function () {
   // checking valid grid size
   function checkGridNumber(number) {
     if (number < 16 || number > 100) {
+      $(".gridOptions").append(warning);
       return (gridNumber = 16);
     }
   }
@@ -92,9 +93,10 @@ $(document).ready(function () {
     });
   }
 
+  const warning = document.createElement("p");
+  warning.textContent = "Grid size should be between 15 and 101";
   let gridNumber = document.querySelector("#gridSize").value;
   checkGridNumber(gridNumber);
-  console.log(gridNumber);
 
   // forming the canvas
   const canvas = $(".canvas");
@@ -123,6 +125,7 @@ $(document).ready(function () {
   });
 
   $(".reset").on("click", () => {
+    $(".gridOptions").remove(warning);
     window.location.reload();
   });
 });
