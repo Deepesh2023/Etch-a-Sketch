@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  // checking valid grid size
+  function checkGridNumber(number) {
+    if (number < 16 || number > 100) {
+      return (gridNumber = 16);
+    }
+  }
+
   // creating the grid
   function createGrid(gridSize) {
     for (i = 0; i < gridSize; i++) {
@@ -85,13 +92,18 @@ $(document).ready(function () {
     });
   }
 
+  let gridNumber = document.querySelector("#gridSize").value;
+  checkGridNumber(gridNumber);
+  console.log(gridNumber);
+
   // forming the canvas
   const canvas = $(".canvas");
   const rowBox = $("<div></div>");
   const columnBox = $("<div></div>");
   rowBox.addClass("rowBox");
   columnBox.addClass("columnBox");
-  createGrid(20);
+
+  createGrid(gridNumber);
   showGrid();
 
   // preventing the default browser behaviour

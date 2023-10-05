@@ -46,6 +46,9 @@
 #gridSize {
   border-radius: 16px;
   background-color: #524b49;
+  border: none;
+  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 .toggleSwitch {
